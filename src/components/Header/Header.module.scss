@@ -1,0 +1,23 @@
+.header{
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 50px;
+  background-color: var(--grey);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  & .tab{
+    user-select: none;
+    font-weight: bold;
+    cursor: pointer;
+    &:hover{
+      color: var(--blue-1);
+    }
+    &.active{
+      color: var(--blue-2);
+    }
+  }
+}
