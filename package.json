@@ -1,9 +1,9 @@
 {
-  "name": "pokemon_test",
+  "name": "test",
+  "homepage": "https://idsjsdev.github.io/backendless",
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "proxy": "https://fex.net/s/1ry11bl",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
