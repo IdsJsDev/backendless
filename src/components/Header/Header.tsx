@@ -14,7 +14,7 @@ const Header: React.FC = () => {
 
   return (
     <div className={cls.header}>
-      {tabs.map((tab) => (
+      {tabs?.map((tab) => (
         <div
           className={cn(cls.tab, { [cls.active]: active === `/${tab.id}` })}
           key={tab.key}

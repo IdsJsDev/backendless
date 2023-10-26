@@ -2,12 +2,12 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { SUPABASE } from './constants/supabase.ts';
 import { ITab } from './interfaces/tabs.interface.ts';
-import Loader from './components/Loader/Loader.tsx';
+// import Loader from './components/Loader/Loader.tsx';
 import RouterComponent from './router/RouterComponent.tsx';
 import { TabsContext } from './context/tabs.context.ts';
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [tabs, setTabs] = useState<ITab[]>();
   const [active, setActive] = useState('');
 
@@ -23,22 +23,16 @@ function App() {
       } catch (error) {
         console.log(error);
       } finally {
-        setIsLoading(false);
+        // setIsLoading(false);
       }
     };
     void getData();
   }, []);
 
-  if (isLoading) return <Loader />;
-  if (!isLoading && !tabs) return <p>ERROR</p>;
   return (
-    <>
-      {tabs && (
-        <TabsContext.Provider value={{ active, tabs, setActiveTab: setActive }}>
-          <RouterComponent />
-        </TabsContext.Provider>
-      )}
-    </>
+    <TabsContext.Provider value={{ active, tabs, setActiveTab: setActive }}>
+      <RouterComponent />
+    </TabsContext.Provider>
   );
 }
 
