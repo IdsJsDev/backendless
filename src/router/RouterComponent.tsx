@@ -3,6 +3,7 @@ import React, { useMemo } from 'react';
 import RootLayout from '../Layouts/Root/Root.layout.tsx';
 import { useTabsContext } from '../context/tabs.context.ts';
 import { pagesList } from './pages.list.ts';
+import Loader from '../components/Loader/Loader.tsx';
 
 const RouterComponent: React.FC = () => {
   const { tabs } = useTabsContext();
@@ -23,7 +24,7 @@ const RouterComponent: React.FC = () => {
           {tabs && <Route index element={<Navigate to={`/${tabs[0].id}`} replace={true} />} />}
           {array}
         </Route>
-        <Route path="*" element={<p>no page</p>} />
+        <Route path="*" element={!tabs ? <Loader /> : <p>no page</p>} />
       </Routes>
     </HashRouter>
   );

@@ -2,12 +2,10 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { SUPABASE } from './constants/supabase.ts';
 import { ITab } from './interfaces/tabs.interface.ts';
-// import Loader from './components/Loader/Loader.tsx';
 import RouterComponent from './router/RouterComponent.tsx';
 import { TabsContext } from './context/tabs.context.ts';
 
 function App() {
-  // const [isLoading, setIsLoading] = useState(true);
   const [tabs, setTabs] = useState<ITab[]>();
   const [active, setActive] = useState('');
 
@@ -22,8 +20,6 @@ function App() {
         setTabs(data.sort((a, b) => a.order - b.order));
       } catch (error) {
         console.log(error);
-      } finally {
-        // setIsLoading(false);
       }
     };
     void getData();
