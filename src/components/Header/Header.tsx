@@ -11,7 +11,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     setActiveTab(location.pathname);
   }, [location]);
-  console.log('render11111');
+
   return (
     <div className={cls.header}>
       {tabs.map((tab) => (
