@@ -1,4 +1,4 @@
-import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { HashRouter, Navigate, Route, Routes } from 'react-router-dom';
 import React, { useMemo } from 'react';
 import RootLayout from '../Layouts/Root/Root.layout.tsx';
 import { useTabsContext } from '../context/tabs.context.ts';
@@ -15,7 +15,7 @@ const RouterComponent: React.FC = () => {
   );
 
   return (
-    <BrowserRouter basename={import.meta.env.PUBLIC_URL}>
+    <HashRouter basename={import.meta.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to={`/${tabs[0].id}`} replace={true} />} />
@@ -23,7 +23,7 @@ const RouterComponent: React.FC = () => {
         </Route>
         <Route path="*" element={<p>no page</p>} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 };
 
