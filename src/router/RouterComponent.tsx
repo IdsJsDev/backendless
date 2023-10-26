@@ -15,7 +15,7 @@ const RouterComponent: React.FC = () => {
   );
 
   return (
-    <BrowserRouter>
+    <BrowserRouter basename={import.meta.env.PUBLIC_URL}>
       <Routes>
         <Route path="/" element={<RootLayout />}>
           <Route index element={<Navigate to={`/${tabs[0].id}`} replace={true} />} />
